@@ -8,12 +8,14 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { PieChartAdvanced1Component } from './pie-chart-advanced1/pie-chart-advanced1.component';
+import { PieChartAdvanced7Component } from './pie-chart-advanced7/pie-chart-advanced7.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    PieChartAdvanced1Component
+    PieChartAdvanced1Component,
+    PieChartAdvanced7Component
   ],
   imports: [
     BrowserModule,
@@ -24,4 +26,5 @@ import { PieChartAdvanced1Component } from './pie-chart-advanced1/pie-chart-adva
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
