@@ -12,11 +12,15 @@ import { environment } from '../../environments/environment';
 export class PieChartAdvanced2Component implements OnInit {
 
   dataChart = [];
+  valueChart = [];
 
   async ngOnInit() {
     try {
       const response = await axios.get(environment.apiURL + "/api/graph2");
       this.dataChart = response.data;
+      for (let i = 0; i < this.dataChart.length; i++) {
+        this.valueChart[i] = this.dataChart[i]['value'];
+      }
 
       console.log(response.data);
     } catch (error) {
