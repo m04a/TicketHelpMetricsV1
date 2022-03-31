@@ -17,9 +17,10 @@ export class PieChartAdvanced2Component implements OnInit {
     try {
       const response = await axios.get(environment.apiURL + "/api/graph2");
       this.dataChart = response.data;
+
       console.log(response.data);
     } catch (error) {
-      console.log(error);
+      //console.log(error);
     }
   }
 
@@ -29,10 +30,15 @@ export class PieChartAdvanced2Component implements OnInit {
 
   view: [number, number] = [700, 400];
   // options
+  showXAxis: boolean = true;
+  showYAxis: boolean = true;
   gradient: boolean = false;
   showLegend: boolean = true;
-  showLabels: boolean = true;
-  isDoughnut: boolean = false;
+  showXAxisLabel: boolean = true;
+  yAxisLabel: string = "Numero d'Usuaris";
+  showYAxisLabel: boolean = true;
+  xAxisLabel: string = 'Rols Usuaris';
+  legendTitle: string ="Llegenda";
 
   //A name posem el nom de les columnes/dades
   colorScheme = [
@@ -52,6 +58,5 @@ export class PieChartAdvanced2Component implements OnInit {
   onDeactivate(data: any): void {
     console.log('Deactivate', JSON.parse(JSON.stringify(data)));
   }
-
 
 }
