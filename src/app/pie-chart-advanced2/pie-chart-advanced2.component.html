@@ -1,0 +1,23 @@
+<div class="card">
+    <h2 class="title">Quins Usuaris pertanyen a cada rol?</h2>
+    <hr>
+    <ngx-charts-bar-vertical
+        [view]="view"
+        [results]="dataChart"
+        [gradient]="gradient"
+        [customColors]="colorScheme"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="showLegend"
+        [legendTitle]="legendTitle"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel"
+        [yAxisTicks]= "valueChart"
+        (select)="onSelect($event)"
+        (activate)="onActivate($event)"
+        (deactivate)="onDeactivate($event)"
+    >
+  </ngx-charts-bar-vertical>
+</div>
