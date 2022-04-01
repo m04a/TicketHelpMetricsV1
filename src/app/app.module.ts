@@ -10,6 +10,11 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { PieChartAdvanced1Component } from './pie-chart-advanced1/pie-chart-advanced1.component';
 import { PieChartAdvanced4Component } from './pie-chart-advanced4/pie-chart-advanced4.component';
 import { VerticalGraphicTypesComponent } from './vertical-graphic-types/vertical-graphic-types.component';
+import { PieChartAdvanced3Component } from './pie-chart-advanced3/pie-chart-advanced3.component';
+import { PieChartAdvanced2Component } from './pie-chart-advanced2/pie-chart-advanced2.component';
+import { PieChartAdvanced7Component } from './pie-chart-advanced7/pie-chart-advanced7.component';
+
+
 
 @NgModule({
   declarations: [
@@ -17,10 +22,13 @@ import { VerticalGraphicTypesComponent } from './vertical-graphic-types/vertical
     NavbarComponent,
     PieChartAdvanced1Component,
     PieChartAdvanced4Component,
-    VerticalGraphicTypesComponent
+    VerticalGraphicTypesComponent,
+    PieChartAdvanced3Component,
+    PieChartAdvanced4Component,
+    PieChartAdvanced2Component,
+    PieChartAdvanced7Component
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
     NgxChartsModule,
     BrowserAnimationsModule
@@ -28,4 +36,5 @@ import { VerticalGraphicTypesComponent } from './vertical-graphic-types/vertical
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
