@@ -1,0 +1,17 @@
+<div class="card">
+  <h2 class="title">Suggerències</h2>
+  <hr>
+  <ngx-charts-gauge
+  [view]="view"
+  [scheme]="colorScheme"
+  [results]="dataChart"
+  [legend]="legend"
+  [max]="max"
+  [legendPosition]="legendPosition"
+  [valueFormatting]="hideShowText"
+  (select)="onSelect($event)"
+  (activate)="onActivate($event)"
+  (deactivate)="onDeactivate($event)"
+  >
+</ngx-charts-gauge>
+</div>
