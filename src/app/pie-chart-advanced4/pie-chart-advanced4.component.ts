@@ -1,31 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
 import axios from 'axios';
 import { environment } from './../../environments/environment';
-import { paleta_1 } from '../color';
+import { paleta_2 } from '../color';
 
 
 @Component({
-  selector: 'app-pie-chart-advanced1',
-  templateUrl: './pie-chart-advanced1.component.html',
-  styleUrls: ['./pie-chart-advanced1.component.sass']
+  selector: 'app-pie-chart-advanced4',
+  templateUrl: './pie-chart-advanced4.component.html',
+  styleUrls: ['./pie-chart-advanced4.component.sass']
 })
-export class PieChartAdvanced1Component implements OnInit {
+export class PieChartAdvanced4Component implements OnInit {
 
   dataChart = [];
+  valueChart = [];
   colorScheme = [{"name": " ","value": " "}];
 
   async ngOnInit() {
     try {
-      const response = await axios.get(environment.apiURL + "/api/graph1");
+      const response = await axios.get(environment.apiURL + "/api/graph4");
       this.dataChart = response.data;
+
       console.log(response.data);
       for (let i = 0; i < this.dataChart.length; i++) {
-        this.colorScheme[i] =  {"name": this.dataChart[i]['name'],"value": paleta_1[i]['color']};
+        this.valueChart[i] = this.dataChart[i]['value'];
+      }
+      for (let i = 0; i < this.dataChart.length; i++) {
+        this.colorScheme[i] =  {"name": this.dataChart[i]['name'],"value": paleta_2[i]['color']};
        }
+      console.log (this.valueChart);
     } catch (error) {
-      console.log(error);
+      //console.log(error);
     }
   }
 
@@ -35,13 +39,17 @@ export class PieChartAdvanced1Component implements OnInit {
 
   view: [number, number] = [700, 400];
   // options
+  showXAxis: boolean = true;
+  showYAxis: boolean = true;
   gradient: boolean = false;
   showLegend: boolean = true;
-  showLabels: boolean = true;
-  isDoughnut: boolean = false;
+  showXAxisLabel: boolean = true;
+  yAxisLabel: string = 'Aules';
+  showYAxisLabel: boolean = true;
+  xAxisLabel: string = 'Dispositus';
+  legendTitle: string ="Llegenda";
 
   //A name posem el nom de les columnes/dades
-
 
   onSelect(data: any): void {
     console.log('Item clicked', JSON.parse(JSON.stringify(data)));
@@ -54,6 +62,5 @@ export class PieChartAdvanced1Component implements OnInit {
   onDeactivate(data: any): void {
     console.log('Deactivate', JSON.parse(JSON.stringify(data)));
   }
-
 
 }

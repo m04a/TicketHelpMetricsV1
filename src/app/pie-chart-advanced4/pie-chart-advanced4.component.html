@@ -1,0 +1,23 @@
+<div class="card">
+  <h2 class="title">Numero de dispositus per aules</h2>
+  <hr>
+  <ngx-charts-bar-horizontal
+    [view]="view"
+    [results]="dataChart"
+    [gradient]="gradient"
+    [customColors]="colorScheme"
+    [xAxis]="showXAxis"
+    [yAxis]="showYAxis"
+    [xAxisTicks]="valueChart"
+    [legend]="showLegend"
+    [legendTitle]="legendTitle"
+    [showXAxisLabel]="showXAxisLabel"
+    [showYAxisLabel]="showYAxisLabel"
+    [xAxisLabel]="xAxisLabel"
+    [yAxisLabel]="yAxisLabel"
+    (select)="onSelect($event)"
+    (activate)="onActivate($event)"
+    (deactivate)="onDeactivate($event)"
+  >
+  </ngx-charts-bar-horizontal>
+</div>
