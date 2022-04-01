@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import axios from 'axios';
 import { environment } from './../../environments/environment';
+import { paleta_2 } from '../color';
+
 
 @Component({
   selector: 'app-pie-chart-advanced4',
@@ -10,6 +12,8 @@ import { environment } from './../../environments/environment';
 export class PieChartAdvanced4Component implements OnInit {
 
   dataChart = [];
+  valueChart = [];
+  colorScheme = [{"name": " ","value": " "}];
 
   async ngOnInit() {
     try {
@@ -17,6 +21,13 @@ export class PieChartAdvanced4Component implements OnInit {
       this.dataChart = response.data;
 
       console.log(response.data);
+      for (let i = 0; i < this.dataChart.length; i++) {
+        this.valueChart[i] = this.dataChart[i]['value'];
+      }
+      for (let i = 0; i < this.dataChart.length; i++) {
+        this.colorScheme[i] =  {"name": this.dataChart[i]['name'],"value": paleta_2[i]['color']};
+       }
+      console.log (this.valueChart);
     } catch (error) {
       //console.log(error);
     }
@@ -39,12 +50,6 @@ export class PieChartAdvanced4Component implements OnInit {
   legendTitle: string ="Llegenda";
 
   //A name posem el nom de les columnes/dades
-  colorScheme = [
-    {"name": "Aula1","value": "#ff0000"},
-    {"name": "Aula2","value": "#000000"},
-    {"name": "Aula3","value": "#c9ff00"},
-    {"name": "Aula4","value": "#ffff00"}
-  ];
 
   onSelect(data: any): void {
     console.log('Item clicked', JSON.parse(JSON.stringify(data)));
