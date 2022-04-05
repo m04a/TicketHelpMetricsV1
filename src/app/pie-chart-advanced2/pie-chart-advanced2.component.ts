@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import axios from 'axios';
 import { environment } from '../../environments/environment';
+import { paleta_5 } from '../color';
+
 
 @Component({
   selector: 'app-pie-chart-advanced2',
@@ -13,6 +15,7 @@ export class PieChartAdvanced2Component implements OnInit {
 
   dataChart = [];
   valueChart = [];
+  colorScheme = [{"name": " ","value": " "}];
 
   async ngOnInit() {
     try {
@@ -21,7 +24,9 @@ export class PieChartAdvanced2Component implements OnInit {
       for (let i = 0; i < this.dataChart.length; i++) {
         this.valueChart[i] = this.dataChart[i]['value'];
       }
-
+      for (let i = 0; i < this.dataChart.length; i++) {
+        this.colorScheme[i] =  {"name": this.dataChart[i]['name'],"value": paleta_5[i]['color']};
+       }
       console.log(response.data);
     } catch (error) {
       //console.log(error);
@@ -45,11 +50,6 @@ export class PieChartAdvanced2Component implements OnInit {
   legendTitle: string ="Llegenda";
 
   //A name posem el nom de les columnes/dades
-  colorScheme = [
-    {"name": "Admin","value": "#ff0000"},
-    {"name": "Editor","value": "#000000"},
-    {"name": "User","value": "#c9ff00"}
-  ];
 
   onSelect(data: any): void {
     console.log('Item clicked', JSON.parse(JSON.stringify(data)));
