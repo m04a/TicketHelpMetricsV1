@@ -44,7 +44,7 @@ export class PieChartAdvanced2Component implements OnInit {
   gradient: boolean = false;
   showLegend: boolean = true;
   showXAxisLabel: boolean = true;
-  yAxisLabel: string = "Numero d'Usuaris";
+  yAxisLabel: string = "Número d'usuaris";
   showYAxisLabel: boolean = true;
   xAxisLabel: string = 'Rols Usuaris';
   legendTitle: string ="Llegenda";

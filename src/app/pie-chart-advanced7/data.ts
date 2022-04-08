@@ -4,7 +4,7 @@ export var single = [
       "value": 8940000
     },
     {
-      "name": "En proces",
+      "name": "En procés",
       "value": 5000000
     },
     {
